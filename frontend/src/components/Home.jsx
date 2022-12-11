@@ -7,7 +7,7 @@ import axios from "axios";
 function Home() {
 const [slot,setSlot] = useState([]);
 const allslots = ()=>{
-  axios.get(`http://localhost:3000/slot/All`).then((response)=>{
+  axios.get(`/slot/All`).then((response)=>{
     setSlot(response.data);
   })
 }
@@ -33,7 +33,7 @@ const submitfunc = (e) =>{
     name:Name,email,contact,Slot:selectedSlot,amount:200,age:Age
   }
   console.log(data)
-  axios.post(`http://localhost:3000/user/register`,data).then((response)=>{
+  axios.post(`/user/register`,data).then((response)=>{
     console.log(response.data)
     window.location.assign('/success')
   }).catch((err)=>{console.log(err)})
@@ -57,7 +57,7 @@ const submitfunc = (e) =>{
         </Form.Group>
         <Form.Group className="mb-3" >
           <Form.Label>Age</Form.Label>
-          <Form.Control type="number" min={18} max={65} placeholder="contact" onChange={(e)=>setAge(e.target.value)} />
+          <Form.Control type="number" min={18} max={65} placeholder="age" onChange={(e)=>setAge(e.target.value)} />
         </Form.Group>
         <Form.Group className="mb-3" >
           <Form.Label>Slot</Form.Label>

@@ -24,11 +24,11 @@ mongoose.connect(
 app.use(morgan("combined"))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname,"../frontend/build/")))
 app.use("/user",userRoutes)
 app.use("/slot",slotRoutes)
 // console.log(slotRoutes)
-// app.get("*",(req,res)=>{
-//     console.log(path.join(__dirname,"../frontend/build/index.html"))
-    // res.sendFile(path.join(__dirname,"../frontend/build/index.html"))})
+app.use(express.static(path.join(__dirname,"../frontend/build/")))
+app.get("*",(req,res)=>{
+    console.log(path.join(__dirname,"../frontend/build/index.html"))
+    res.sendFile(path.join(__dirname,"../frontend/build/index.html"))})
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
