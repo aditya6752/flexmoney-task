@@ -9,5 +9,7 @@ Frontend - React
 Backend - NodeJS, Express
 Database - Mongo
 
+Website link - http://15.206.80.55/
+
 
 ![erd](https://user-images.githubusercontent.com/62654457/207051275-529ccab1-2832-4869-a6f4-f937ef33f97e.png)
